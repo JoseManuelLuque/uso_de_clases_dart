@@ -1,4 +1,4 @@
-import 'package:persona.dart';
+import 'package:uso_de_clases_dart/persona.dart';
 import 'package:uso_de_clases_dart/cuenta_corriente.dart';
 import 'package:uso_de_clases_dart/cuenta_ahorro.dart';
 
