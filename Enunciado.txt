@@ -1,0 +1,24 @@
+Crea un programa principal que muestre las opciones correspondientes que permitan consultar el saldo en
+ambas cuentas y simular la extracción de saldo y crea dos subclases, CuentaBancaria que tenga al
+menos los atributos: titular y saldo, y CuentaAhorro debe tener un método que añada intereses al
+saldo.
+● CuentaCorriente debe permitir sacar dinero desde un cajero.
+● Define una clase abstracta Cuenta con estos atributos:
+● numerocuenta : entero largo
+● saldo : double
+● cliente : atributo de la clase Persona (que tiene nombre y apellidos, y NIF).
+● La clase Cuenta tendrá estos métodos:
+● Constructor parametrizado que recibe un cliente y un número de cuenta
+● Getters & Setters para los atributos
+● ingresar(double): permitirá ingresar una cantidad en la cuenta.
+● abstract retirar(double): permitirá sacar una cantidad de la cuenta (si hay dinero). No se
+implementa, depende del tipo de cuenta
+● actualizarSaldo(): actualizará el saldo de la cuenta, pero cada cuenta lo hace de una forma
+diferente
+● CuentaAhorro y CuentaCorriente deberán heredar de CuentaBancaria.
+● CuentaCorriente: Cuenta con un interés fijo del 1.5%. Incluir constructor parametrizado y método
+toString().
+● CuentaAhorro: Esta cuenta tiene como atributos el interés variable a lo largo del año y un saldo
+mínimo necesario. Al retirar dinero hay que tener en cuenta que no se sobrepase el saldo mínimo.
+Incluir constructor parametrizado, método toString() y método para cambiar el interés.
+● Crea un programa que cree varias cuentas y pruebe sus características.
