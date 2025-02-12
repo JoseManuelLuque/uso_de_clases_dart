@@ -1,33 +1,34 @@
 import 'cuenta_bancaria.dart';
 import 'persona.dart';
 
-class CuentaAhorro extends CuentaBancaria {
-  double interesVariable;
-  double saldoMinimo;
+// Clase que representa una cuenta corriente y hereda de CuentaBancaria
+class CuentaCorriente extends CuentaBancaria {
+  // Interés fijo para la cuenta corriente
+  static const double interesFijo = 1.5;
 
-  CuentaAhorro(Persona cliente, int numeroCuenta, double saldo, this.interesVariable, this.saldoMinimo)
+  // Constructor que inicializa los atributos de la cuenta corriente
+  CuentaCorriente(Persona cliente, int numeroCuenta, double saldo)
       : super(cliente, numeroCuenta, saldo);
 
+  // Implementación del método para actualizar el saldo de la cuenta corriente
   @override
   void actualizarSaldo() {
-    saldo += saldo * (interesVariable / 100);
+    saldo += saldo * (interesFijo / 100);
   }
 
+  // Implementación del método para retirar una cantidad de la cuenta corriente
   @override
   void retirar(double cantidad) {
-    if (saldo - cantidad >= saldoMinimo) {
+    if (saldo >= cantidad) {
       saldo -= cantidad;
     } else {
-      print('No se puede retirar, saldo mínimo requerido');
+      print('Saldo insuficiente');
     }
   }
 
-  void cambiarInteres(double nuevoInteres) {
-    interesVariable = nuevoInteres;
-  }
-
+  // Método toString para representar la cuenta corriente como una cadena
   @override
   String toString() {
-    return 'CuentaAhorro{numeroCuenta: $numeroCuenta, saldo: $saldo, cliente: ${cliente.nombre} ${cliente.apellidos}, interesVariable: $interesVariable, saldoMinimo: $saldoMinimo}';
+    return 'CuentaCorriente{numeroCuenta: $numeroCuenta, saldo: $saldo, cliente: ${cliente.nombre} ${cliente.apellidos}}';
   }
 }
